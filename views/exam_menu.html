@@ -1,0 +1,41 @@
+<div class="card meetings cf" ng-controller="TestingCtrl"> 
+		<h2>Choose Examination to Conduct</h2>
+		</br>
+<!-- 
+<select ng-model="filterCondition.testTypes" ng-options="testType.displayText for testType in testTypes">
+</select>
+ -->
+
+
+<div class="container">
+	<table>
+	<thead>
+	<tr>
+		<th>Select</th>
+		<th>Duration</th>
+		<th>Test Type</th>
+	</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="testType in testTypes track by $index">
+			<td>
+				<input type="radio" id="{{ 'testType' + $index }}" name="testType" ng-model="displayTexts" ng-value="{{testType.displayText}}"> </input>
+			</td>
+			<td><input type="number" value="{{testType.duration}}">
+
+			</td>
+			</td>
+			<td>{{testType.displayText}}
+			</td>
+		</tr>
+	</tbody>
+	</table>
+			<!-- ON SUBMIT change var = selected on options  -->	
+			<label>WHERE: {{ displayTexts }} </label>
+			<button ng-click=""><a href="#/tests/reminder">Begin Test</a></button>
+</div>
+
+
+
+
+</div>

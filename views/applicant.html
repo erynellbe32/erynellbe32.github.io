@@ -1,0 +1,64 @@
+<section class="card register">
+
+<!-- for test user registration -->
+
+  <form name="myform"
+    ng-submit="newuser()"
+    novalidate>
+
+    <div class="textintro">
+      <h1>Register New User</h1>
+      <p>Testing Applicant Information</p>
+      <p class="message" ng-show="message">{{ message }}</p>
+    </div>
+
+    <fieldset>
+      <input type="text" name="firstname" placeholder="First Name"
+      ng-model="applicant.firstname" ng-required="true">
+      <p class="error validationerror"
+      ng-show="myform.firstname.$invalid && myform.firstname.$touched">
+      First name required</p>
+
+      <input type="text" name="lastname" placeholder="Last Name"
+      ng-model="applicant.lastname" ng-required="true">
+      <p class="error validationerror"
+      ng-show="myform.lastname.$invalid && myform.lastname.$touched">
+      Last name required</p>
+
+      <input type="email" name="email" placeholder="Email"
+      ng-model="applicant.email" ng-required="true">
+      <p class="error validationerror"
+      ng-show="myform.email.$invalid && myform.email.$touched">
+      Must be a valid email</p>
+ 
+      <input type="radio" name="gender" placeholder="gender"
+      ng-model="applicant.gender" ng-required="true">
+      <p class="error validationerror"
+      ng-show="myform.password.$invalid && myform.email.$touched">
+      Gender required</p>
+
+      <input type="calendar" name="DOB" placeholder="calendar"
+      ng-model="applicant.password" ng-required="true">
+      <p class="error validationerror"
+      ng-show="myform.password.$invalid && myform.email.$touched">
+      Date of Birth</p>
+
+      <input type="text" name="company" placeholder="company"
+      ng-model="applicant.password" ng-required="true">
+      <p class="error validationerror"
+      ng-show="myform.password.$invalid && myform.email.$touched">
+      Company Tested for</p>
+
+      <input type="text" name="position" placeholder="position"
+      ng-model="applicant.password" ng-required="true">
+      <p class="error validationerror"
+      ng-show="myform.password.$invalid && myform.email.$touched">
+      Position Applied For</p>
+
+ -->
+    </fieldset>
+
+    <button type="submit" class="btn" ng-disabled="myform.$invalid">Register</button>
+    <p>or <a ng-href="#/login">login</a></p>
+  </form>
+</section>

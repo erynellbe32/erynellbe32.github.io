@@ -1,0 +1,78 @@
+
+<div class="container" ng-controller="mpqCtrl">
+<div class="container">
+	<span class="col-md-2">NAME:{{userfirstname + " " + userlastname}}</span>
+	<span class="col-md-2">DATE:{{today.date}}</span>
+</div>	
+</br>
+
+
+<table border="1">
+	<thead>
+	<tr>
+		<th colspan="5"><label>Primary Dimensions</label></th>
+	</tr>
+		<tr>
+			<th>Scale
+			</th>
+			<th>Raw
+			</th>
+			<th>Dimensions
+			</th>
+			<th>Sten Average
+			</th>
+			<th>Description
+			</th>
+		</tr>
+	</thead>
+
+<!-- if ave = 1to5 then desc = left desc vice versa -->
+	<tr ng-repeat="mpqPriDim in mpqPriDims">
+		<td>S{{$index + 1}}</td>
+		<td>{{mpqPriDim.raw}}</td>
+		<td>{{mpqPriDim.scale}}</td>
+		<td>{{mpqPriDim.average}}</td>
+		<td>{{mpqPriDim.leftDesc}}</td>
+	</tr>
+	<thead>
+		<tr>
+			<th colspan="5"><label>Big Five Factors </label></th>
+		</tr>
+		<tr>
+			<th>Factors
+			</th>
+			<th>Raw
+			</th>
+			<th>Big Five
+			</th>
+			<th>Sten Average
+			</th>
+			<th>Description
+			</th>
+		</tr>
+	</thead>
+
+	<!-- equation = average  -->
+	<tr ng-repeat="mpqBigFive in mpqBigFives">
+		<td>F{{$index + 1}}</td>	
+		<td>{{mpqBigFive.raw}}</td>		
+		<td>{{mpqBigFive.dimension}}</td>
+		<td> {{mpqBigFive.average}} </td>
+		<td>{{mpqBigFive.leftDesc}} </td>
+	</tr>
+
+</table>
+</br>
+</br>
+
+<!-- 
+
+/**
+ * Sends email to nominated user
+ */
+ -->
+
+
+<button type="" ng-click="results()" ng-disabled="$error">Save Results</button>
+</div>
+
